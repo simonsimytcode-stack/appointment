@@ -199,29 +199,29 @@ form.addEventListener("submit", async (e) => {
     btn.disabled = true;
     btn.innerText = "Submitting...";
 
-    try {
+  try {
 
-        const formData = new FormData(form);
+    const formData = new FormData(form);
 
-        const response = await fetch(SCRIPT_URL, {
-            method: "POST",
-            body: formData
-        });
+    await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    });
 
-        const result = await response.json();
+    status.style.color = "green";
+    status.innerHTML = "✔ Appointment request sent.";
 
-        if (result.result === "success") {
+    form.reset();
 
-            status.style.color = "green";
-            status.innerHTML = "✔ Appointment booked successfully.";
+} catch (error) {
 
-            form.reset();
+    console.error(error);
 
-        } else {
+    status.style.color = "red";
+    status.innerHTML = "✖ Failed to submit appointment.";
 
-            throw new Error("Submission failed.");
-
-        }
+}
 
     } catch (error) {
 
