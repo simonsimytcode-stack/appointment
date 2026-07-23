@@ -104,8 +104,7 @@
 
 <form
     id="appointmentForm"
-    data-script-url="https://script.google.com/macros/s/AKfycbzl-6Cu0zO_rTNk7O-6n8P6G23Q3Cu8uqwYqO8qlTfxD2CqtsCEB0usrOeSecdn6-UqZA/exec">
-
+    
 <div class="form-group">
 <label>Full Name</label>
 <input
@@ -186,10 +185,10 @@ Book Appointment
 </div>
 
 <script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzl-6Cu0zO_rTNk7O-6n8P6G23Q3Cu8uqwYqO8qlTfxD2CqtsCEB0usrOeSecdn6-UqZA/exec";
+
 const form = document.getElementById("appointmentForm");
 const status = document.getElementById("status");
-
-const SCRIPT_URL = form.dataset.scriptUrl;
 
 form.addEventListener("submit", async (e)=>{
 
