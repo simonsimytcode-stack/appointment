@@ -102,8 +102,8 @@
 
 <p>Relax • Refresh • Rejuvenate</p>
 
-<form
-    id="appointmentForm"
+<form id="appointmentForm">
+</form>
     
 <div class="form-group">
 <label>Full Name</label>
@@ -170,9 +170,11 @@ placeholder="Write your request..."></textarea>
 
 </div>
 
-<button type="submit">
+<button
+    id="submitBtn"
+    type="submit">
 
-Book Appointment
+    Book Appointment
 
 </button>
 
@@ -194,7 +196,7 @@ form.addEventListener("submit", async (e)=>{
 
     e.preventDefault();
 
-    const btn = form.querySelector("button");
+    const btn = document.getElementById("submitBtn");
     btn.disabled = true;
     btn.innerText = "Submitting...";
 
